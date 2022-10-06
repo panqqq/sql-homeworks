@@ -17,7 +17,6 @@ BEGIN
         l_name := :OLD.last_name;
     END IF;
 
-  EXEC EMPLOYMENT_LOG_MOVE(f_name, l_name, status);
-  --INSERT INTO employment_logs(first_name, last_name, employment_action) VALUES (f_name, l_name, status);
+    EMPLOYMENT_LOG_MOVE(f_name, l_name, status);
+
 END;
-/

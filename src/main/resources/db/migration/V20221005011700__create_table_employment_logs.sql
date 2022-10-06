@@ -13,7 +13,7 @@ CREATE SEQUENCE employment_logs_seq NOCACHE;
 ALTER TABLE employment_logs
     MODIFY employment_log_id DEFAULT employment_logs_seq.nextval;
 
-CREATE OR REPLACE PROCEDURE employment_log_move
+create or replace PROCEDURE employment_log_move
 (f_name IN varchar,
 l_name IN varchar,
 e_action IN varchar)
@@ -21,5 +21,3 @@ AS
 BEGIN
 INSERT INTO employment_logs(first_name, last_name, employment_action) VALUES (f_name, l_name, e_action);
 END employment_log_move;
-/
---EXEC employment_log_move ('John','Doe','HIRED');
